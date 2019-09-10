@@ -181,12 +181,12 @@ they are the simplest.
     The ``Apply(ExampleEvent)`` is invoked by the ``Emit(...)`` method, so
     after the event has been emitted, the aggregate state has changed.
 
-The ``ExampleAggregate`` exposes the ``SetMagicNumer(int)`` method, which
+The ``ExampleAggregate`` exposes the ``SetMagicNumber(int)`` method, which
 is used to expose the business rules for changing the magic number. If the
 magic number hasn't been set before, the event ``ExampleEvent`` is emitted
 and the aggregate state is mutated.
 
-If the magic numer was changed, we return a failed ``IExecutionResult`` with
+If the magic number was changed, we return a failed ``IExecutionResult`` with
 an error message. Returning a failed execution result will make EventFlow
 disregard any events the aggregate has emitted.
 
@@ -274,7 +274,7 @@ rather simple, but they could contain more complex logic. How much is up to you.
   :lines: 31-43
 
 The ``ExampleCommandHandler`` in our case here merely invokes the
-``SetMagicNumer`` on the aggregate and returns the execution result. Remember, if
+``SetMagicNumber`` on the aggregate and returns the execution result. Remember, if
 a command handler returns a failed execution result, EventFlow will disregard any
 events the aggregate has emitted.
 
